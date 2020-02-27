@@ -16,6 +16,5 @@ build = "build.rs"
 [dependencies]
 futures = "0.1.29"
 grpcio = { version = "0.4.7", features = [ "secure" ] }
-#protobuf = "2.8.0"
 protobuf = "2.10.1"
 raft = "0.4.3"
