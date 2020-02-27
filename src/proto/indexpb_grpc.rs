@@ -18,413 +18,446 @@
 #![allow(unused_imports)]
 #![allow(unused_results)]
 
+const METHOD_INDEX_RAFT: ::grpcio::Method<super::eraftpb::Message, super::indexrpcpb::RaftDone> = ::grpcio::Method {
+    ty: ::grpcio::MethodType::Unary,
+    name: "/indexpb.Index/Raft",
+    req_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+    resp_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+};
 
-// interface
+const METHOD_INDEX_RAFT_CONF_CHANGE: ::grpcio::Method<super::indexrpcpb::ConfChangeReq, super::indexrpcpb::RaftDone> = ::grpcio::Method {
+    ty: ::grpcio::MethodType::Unary,
+    name: "/indexpb.Index/RaftConfChange",
+    req_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+    resp_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+};
 
-pub trait Index {
-    fn raft(&self, o: ::grpc::RequestOptions, p: super::eraftpb::Message) -> ::grpc::SingleResponse<super::indexrpcpb::RaftDone>;
+const METHOD_INDEX_PROBE: ::grpcio::Method<super::indexrpcpb::ProbeReq, super::indexrpcpb::ProbeResp> = ::grpcio::Method {
+    ty: ::grpcio::MethodType::Unary,
+    name: "/indexpb.Index/Probe",
+    req_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+    resp_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+};
 
-    fn raft_conf_change(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::ConfChangeReq) -> ::grpc::SingleResponse<super::indexrpcpb::RaftDone>;
+const METHOD_INDEX_PEERS: ::grpcio::Method<super::indexrpcpb::PeersReq, super::indexrpcpb::PeersResp> = ::grpcio::Method {
+    ty: ::grpcio::MethodType::Unary,
+    name: "/indexpb.Index/Peers",
+    req_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+    resp_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+};
 
-    fn probe(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::ProbeReq) -> ::grpc::SingleResponse<super::indexrpcpb::ProbeResp>;
+const METHOD_INDEX_METRICS: ::grpcio::Method<super::indexrpcpb::MetricsReq, super::indexrpcpb::MetricsResp> = ::grpcio::Method {
+    ty: ::grpcio::MethodType::Unary,
+    name: "/indexpb.Index/Metrics",
+    req_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+    resp_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+};
 
-    fn peers(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::PeersReq) -> ::grpc::SingleResponse<super::indexrpcpb::PeersResp>;
+const METHOD_INDEX_GET: ::grpcio::Method<super::indexrpcpb::GetReq, super::indexrpcpb::GetResp> = ::grpcio::Method {
+    ty: ::grpcio::MethodType::Unary,
+    name: "/indexpb.Index/Get",
+    req_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+    resp_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+};
 
-    fn metrics(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::MetricsReq) -> ::grpc::SingleResponse<super::indexrpcpb::MetricsResp>;
+const METHOD_INDEX_PUT: ::grpcio::Method<super::indexrpcpb::PutReq, super::indexrpcpb::PutResp> = ::grpcio::Method {
+    ty: ::grpcio::MethodType::Unary,
+    name: "/indexpb.Index/Put",
+    req_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+    resp_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+};
 
-    fn get(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::GetReq) -> ::grpc::SingleResponse<super::indexrpcpb::GetResp>;
+const METHOD_INDEX_DELETE: ::grpcio::Method<super::indexrpcpb::DeleteReq, super::indexrpcpb::DeleteResp> = ::grpcio::Method {
+    ty: ::grpcio::MethodType::Unary,
+    name: "/indexpb.Index/Delete",
+    req_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+    resp_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+};
 
-    fn put(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::PutReq) -> ::grpc::SingleResponse<super::indexrpcpb::PutResp>;
+const METHOD_INDEX_BULK_PUT: ::grpcio::Method<super::indexrpcpb::BulkPutReq, super::indexrpcpb::BulkPutResp> = ::grpcio::Method {
+    ty: ::grpcio::MethodType::Unary,
+    name: "/indexpb.Index/BulkPut",
+    req_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+    resp_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+};
 
-    fn delete(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::DeleteReq) -> ::grpc::SingleResponse<super::indexrpcpb::DeleteResp>;
+const METHOD_INDEX_BULK_DELETE: ::grpcio::Method<super::indexrpcpb::BulkDeleteReq, super::indexrpcpb::BulkDeleteResp> = ::grpcio::Method {
+    ty: ::grpcio::MethodType::Unary,
+    name: "/indexpb.Index/BulkDelete",
+    req_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+    resp_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+};
 
-    fn bulk_put(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::BulkPutReq) -> ::grpc::SingleResponse<super::indexrpcpb::BulkPutResp>;
+const METHOD_INDEX_COMMIT: ::grpcio::Method<super::indexrpcpb::CommitReq, super::indexrpcpb::CommitResp> = ::grpcio::Method {
+    ty: ::grpcio::MethodType::Unary,
+    name: "/indexpb.Index/Commit",
+    req_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+    resp_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+};
 
-    fn bulk_delete(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::BulkDeleteReq) -> ::grpc::SingleResponse<super::indexrpcpb::BulkDeleteResp>;
+const METHOD_INDEX_ROLLBACK: ::grpcio::Method<super::indexrpcpb::RollbackReq, super::indexrpcpb::RollbackResp> = ::grpcio::Method {
+    ty: ::grpcio::MethodType::Unary,
+    name: "/indexpb.Index/Rollback",
+    req_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+    resp_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+};
 
-    fn commit(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::CommitReq) -> ::grpc::SingleResponse<super::indexrpcpb::CommitResp>;
+const METHOD_INDEX_MERGE: ::grpcio::Method<super::indexrpcpb::MergeReq, super::indexrpcpb::MergeResp> = ::grpcio::Method {
+    ty: ::grpcio::MethodType::Unary,
+    name: "/indexpb.Index/Merge",
+    req_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+    resp_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+};
 
-    fn rollback(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::RollbackReq) -> ::grpc::SingleResponse<super::indexrpcpb::RollbackResp>;
+const METHOD_INDEX_SEARCH: ::grpcio::Method<super::indexrpcpb::SearchReq, super::indexrpcpb::SearchResp> = ::grpcio::Method {
+    ty: ::grpcio::MethodType::Unary,
+    name: "/indexpb.Index/Search",
+    req_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+    resp_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+};
 
-    fn merge(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::MergeReq) -> ::grpc::SingleResponse<super::indexrpcpb::MergeResp>;
+const METHOD_INDEX_SCHEMA: ::grpcio::Method<super::indexrpcpb::SchemaReq, super::indexrpcpb::SchemaResp> = ::grpcio::Method {
+    ty: ::grpcio::MethodType::Unary,
+    name: "/indexpb.Index/Schema",
+    req_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+    resp_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
+};
 
-    fn search(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::SearchReq) -> ::grpc::SingleResponse<super::indexrpcpb::SearchResp>;
-
-    fn schema(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::SchemaReq) -> ::grpc::SingleResponse<super::indexrpcpb::SchemaResp>;
-}
-
-// client
-
+#[derive(Clone)]
 pub struct IndexClient {
-    grpc_client: ::std::sync::Arc<::grpc::Client>,
-    method_Raft: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::eraftpb::Message, super::indexrpcpb::RaftDone>>,
-    method_RaftConfChange: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::indexrpcpb::ConfChangeReq, super::indexrpcpb::RaftDone>>,
-    method_Probe: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::indexrpcpb::ProbeReq, super::indexrpcpb::ProbeResp>>,
-    method_Peers: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::indexrpcpb::PeersReq, super::indexrpcpb::PeersResp>>,
-    method_Metrics: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::indexrpcpb::MetricsReq, super::indexrpcpb::MetricsResp>>,
-    method_Get: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::indexrpcpb::GetReq, super::indexrpcpb::GetResp>>,
-    method_Put: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::indexrpcpb::PutReq, super::indexrpcpb::PutResp>>,
-    method_Delete: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::indexrpcpb::DeleteReq, super::indexrpcpb::DeleteResp>>,
-    method_BulkPut: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::indexrpcpb::BulkPutReq, super::indexrpcpb::BulkPutResp>>,
-    method_BulkDelete: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::indexrpcpb::BulkDeleteReq, super::indexrpcpb::BulkDeleteResp>>,
-    method_Commit: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::indexrpcpb::CommitReq, super::indexrpcpb::CommitResp>>,
-    method_Rollback: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::indexrpcpb::RollbackReq, super::indexrpcpb::RollbackResp>>,
-    method_Merge: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::indexrpcpb::MergeReq, super::indexrpcpb::MergeResp>>,
-    method_Search: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::indexrpcpb::SearchReq, super::indexrpcpb::SearchResp>>,
-    method_Schema: ::std::sync::Arc<::grpc::rt::MethodDescriptor<super::indexrpcpb::SchemaReq, super::indexrpcpb::SchemaResp>>,
+    client: ::grpcio::Client,
 }
 
-impl ::grpc::ClientStub for IndexClient {
-    fn with_client(grpc_client: ::std::sync::Arc<::grpc::Client>) -> Self {
+impl IndexClient {
+    pub fn new(channel: ::grpcio::Channel) -> Self {
         IndexClient {
-            grpc_client: grpc_client,
-            method_Raft: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/indexpb.Index/Raft".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_RaftConfChange: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/indexpb.Index/RaftConfChange".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Probe: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/indexpb.Index/Probe".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Peers: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/indexpb.Index/Peers".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Metrics: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/indexpb.Index/Metrics".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Get: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/indexpb.Index/Get".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Put: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/indexpb.Index/Put".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Delete: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/indexpb.Index/Delete".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_BulkPut: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/indexpb.Index/BulkPut".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_BulkDelete: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/indexpb.Index/BulkDelete".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Commit: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/indexpb.Index/Commit".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Rollback: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/indexpb.Index/Rollback".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Merge: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/indexpb.Index/Merge".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Search: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/indexpb.Index/Search".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
-            method_Schema: ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                name: "/indexpb.Index/Schema".to_string(),
-                streaming: ::grpc::rt::GrpcStreaming::Unary,
-                req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-            }),
+            client: ::grpcio::Client::new(channel),
         }
     }
+
+    pub fn raft_opt(&self, req: &super::eraftpb::Message, opt: ::grpcio::CallOption) -> ::grpcio::Result<super::indexrpcpb::RaftDone> {
+        self.client.unary_call(&METHOD_INDEX_RAFT, req, opt)
+    }
+
+    pub fn raft(&self, req: &super::eraftpb::Message) -> ::grpcio::Result<super::indexrpcpb::RaftDone> {
+        self.raft_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn raft_async_opt(&self, req: &super::eraftpb::Message, opt: ::grpcio::CallOption) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::RaftDone>> {
+        self.client.unary_call_async(&METHOD_INDEX_RAFT, req, opt)
+    }
+
+    pub fn raft_async(&self, req: &super::eraftpb::Message) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::RaftDone>> {
+        self.raft_async_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn raft_conf_change_opt(&self, req: &super::indexrpcpb::ConfChangeReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<super::indexrpcpb::RaftDone> {
+        self.client.unary_call(&METHOD_INDEX_RAFT_CONF_CHANGE, req, opt)
+    }
+
+    pub fn raft_conf_change(&self, req: &super::indexrpcpb::ConfChangeReq) -> ::grpcio::Result<super::indexrpcpb::RaftDone> {
+        self.raft_conf_change_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn raft_conf_change_async_opt(&self, req: &super::indexrpcpb::ConfChangeReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::RaftDone>> {
+        self.client.unary_call_async(&METHOD_INDEX_RAFT_CONF_CHANGE, req, opt)
+    }
+
+    pub fn raft_conf_change_async(&self, req: &super::indexrpcpb::ConfChangeReq) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::RaftDone>> {
+        self.raft_conf_change_async_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn probe_opt(&self, req: &super::indexrpcpb::ProbeReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<super::indexrpcpb::ProbeResp> {
+        self.client.unary_call(&METHOD_INDEX_PROBE, req, opt)
+    }
+
+    pub fn probe(&self, req: &super::indexrpcpb::ProbeReq) -> ::grpcio::Result<super::indexrpcpb::ProbeResp> {
+        self.probe_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn probe_async_opt(&self, req: &super::indexrpcpb::ProbeReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::ProbeResp>> {
+        self.client.unary_call_async(&METHOD_INDEX_PROBE, req, opt)
+    }
+
+    pub fn probe_async(&self, req: &super::indexrpcpb::ProbeReq) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::ProbeResp>> {
+        self.probe_async_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn peers_opt(&self, req: &super::indexrpcpb::PeersReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<super::indexrpcpb::PeersResp> {
+        self.client.unary_call(&METHOD_INDEX_PEERS, req, opt)
+    }
+
+    pub fn peers(&self, req: &super::indexrpcpb::PeersReq) -> ::grpcio::Result<super::indexrpcpb::PeersResp> {
+        self.peers_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn peers_async_opt(&self, req: &super::indexrpcpb::PeersReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::PeersResp>> {
+        self.client.unary_call_async(&METHOD_INDEX_PEERS, req, opt)
+    }
+
+    pub fn peers_async(&self, req: &super::indexrpcpb::PeersReq) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::PeersResp>> {
+        self.peers_async_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn metrics_opt(&self, req: &super::indexrpcpb::MetricsReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<super::indexrpcpb::MetricsResp> {
+        self.client.unary_call(&METHOD_INDEX_METRICS, req, opt)
+    }
+
+    pub fn metrics(&self, req: &super::indexrpcpb::MetricsReq) -> ::grpcio::Result<super::indexrpcpb::MetricsResp> {
+        self.metrics_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn metrics_async_opt(&self, req: &super::indexrpcpb::MetricsReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::MetricsResp>> {
+        self.client.unary_call_async(&METHOD_INDEX_METRICS, req, opt)
+    }
+
+    pub fn metrics_async(&self, req: &super::indexrpcpb::MetricsReq) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::MetricsResp>> {
+        self.metrics_async_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn get_opt(&self, req: &super::indexrpcpb::GetReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<super::indexrpcpb::GetResp> {
+        self.client.unary_call(&METHOD_INDEX_GET, req, opt)
+    }
+
+    pub fn get(&self, req: &super::indexrpcpb::GetReq) -> ::grpcio::Result<super::indexrpcpb::GetResp> {
+        self.get_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn get_async_opt(&self, req: &super::indexrpcpb::GetReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::GetResp>> {
+        self.client.unary_call_async(&METHOD_INDEX_GET, req, opt)
+    }
+
+    pub fn get_async(&self, req: &super::indexrpcpb::GetReq) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::GetResp>> {
+        self.get_async_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn put_opt(&self, req: &super::indexrpcpb::PutReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<super::indexrpcpb::PutResp> {
+        self.client.unary_call(&METHOD_INDEX_PUT, req, opt)
+    }
+
+    pub fn put(&self, req: &super::indexrpcpb::PutReq) -> ::grpcio::Result<super::indexrpcpb::PutResp> {
+        self.put_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn put_async_opt(&self, req: &super::indexrpcpb::PutReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::PutResp>> {
+        self.client.unary_call_async(&METHOD_INDEX_PUT, req, opt)
+    }
+
+    pub fn put_async(&self, req: &super::indexrpcpb::PutReq) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::PutResp>> {
+        self.put_async_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn delete_opt(&self, req: &super::indexrpcpb::DeleteReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<super::indexrpcpb::DeleteResp> {
+        self.client.unary_call(&METHOD_INDEX_DELETE, req, opt)
+    }
+
+    pub fn delete(&self, req: &super::indexrpcpb::DeleteReq) -> ::grpcio::Result<super::indexrpcpb::DeleteResp> {
+        self.delete_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn delete_async_opt(&self, req: &super::indexrpcpb::DeleteReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::DeleteResp>> {
+        self.client.unary_call_async(&METHOD_INDEX_DELETE, req, opt)
+    }
+
+    pub fn delete_async(&self, req: &super::indexrpcpb::DeleteReq) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::DeleteResp>> {
+        self.delete_async_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn bulk_put_opt(&self, req: &super::indexrpcpb::BulkPutReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<super::indexrpcpb::BulkPutResp> {
+        self.client.unary_call(&METHOD_INDEX_BULK_PUT, req, opt)
+    }
+
+    pub fn bulk_put(&self, req: &super::indexrpcpb::BulkPutReq) -> ::grpcio::Result<super::indexrpcpb::BulkPutResp> {
+        self.bulk_put_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn bulk_put_async_opt(&self, req: &super::indexrpcpb::BulkPutReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::BulkPutResp>> {
+        self.client.unary_call_async(&METHOD_INDEX_BULK_PUT, req, opt)
+    }
+
+    pub fn bulk_put_async(&self, req: &super::indexrpcpb::BulkPutReq) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::BulkPutResp>> {
+        self.bulk_put_async_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn bulk_delete_opt(&self, req: &super::indexrpcpb::BulkDeleteReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<super::indexrpcpb::BulkDeleteResp> {
+        self.client.unary_call(&METHOD_INDEX_BULK_DELETE, req, opt)
+    }
+
+    pub fn bulk_delete(&self, req: &super::indexrpcpb::BulkDeleteReq) -> ::grpcio::Result<super::indexrpcpb::BulkDeleteResp> {
+        self.bulk_delete_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn bulk_delete_async_opt(&self, req: &super::indexrpcpb::BulkDeleteReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::BulkDeleteResp>> {
+        self.client.unary_call_async(&METHOD_INDEX_BULK_DELETE, req, opt)
+    }
+
+    pub fn bulk_delete_async(&self, req: &super::indexrpcpb::BulkDeleteReq) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::BulkDeleteResp>> {
+        self.bulk_delete_async_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn commit_opt(&self, req: &super::indexrpcpb::CommitReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<super::indexrpcpb::CommitResp> {
+        self.client.unary_call(&METHOD_INDEX_COMMIT, req, opt)
+    }
+
+    pub fn commit(&self, req: &super::indexrpcpb::CommitReq) -> ::grpcio::Result<super::indexrpcpb::CommitResp> {
+        self.commit_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn commit_async_opt(&self, req: &super::indexrpcpb::CommitReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::CommitResp>> {
+        self.client.unary_call_async(&METHOD_INDEX_COMMIT, req, opt)
+    }
+
+    pub fn commit_async(&self, req: &super::indexrpcpb::CommitReq) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::CommitResp>> {
+        self.commit_async_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn rollback_opt(&self, req: &super::indexrpcpb::RollbackReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<super::indexrpcpb::RollbackResp> {
+        self.client.unary_call(&METHOD_INDEX_ROLLBACK, req, opt)
+    }
+
+    pub fn rollback(&self, req: &super::indexrpcpb::RollbackReq) -> ::grpcio::Result<super::indexrpcpb::RollbackResp> {
+        self.rollback_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn rollback_async_opt(&self, req: &super::indexrpcpb::RollbackReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::RollbackResp>> {
+        self.client.unary_call_async(&METHOD_INDEX_ROLLBACK, req, opt)
+    }
+
+    pub fn rollback_async(&self, req: &super::indexrpcpb::RollbackReq) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::RollbackResp>> {
+        self.rollback_async_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn merge_opt(&self, req: &super::indexrpcpb::MergeReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<super::indexrpcpb::MergeResp> {
+        self.client.unary_call(&METHOD_INDEX_MERGE, req, opt)
+    }
+
+    pub fn merge(&self, req: &super::indexrpcpb::MergeReq) -> ::grpcio::Result<super::indexrpcpb::MergeResp> {
+        self.merge_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn merge_async_opt(&self, req: &super::indexrpcpb::MergeReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::MergeResp>> {
+        self.client.unary_call_async(&METHOD_INDEX_MERGE, req, opt)
+    }
+
+    pub fn merge_async(&self, req: &super::indexrpcpb::MergeReq) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::MergeResp>> {
+        self.merge_async_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn search_opt(&self, req: &super::indexrpcpb::SearchReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<super::indexrpcpb::SearchResp> {
+        self.client.unary_call(&METHOD_INDEX_SEARCH, req, opt)
+    }
+
+    pub fn search(&self, req: &super::indexrpcpb::SearchReq) -> ::grpcio::Result<super::indexrpcpb::SearchResp> {
+        self.search_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn search_async_opt(&self, req: &super::indexrpcpb::SearchReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::SearchResp>> {
+        self.client.unary_call_async(&METHOD_INDEX_SEARCH, req, opt)
+    }
+
+    pub fn search_async(&self, req: &super::indexrpcpb::SearchReq) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::SearchResp>> {
+        self.search_async_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn schema_opt(&self, req: &super::indexrpcpb::SchemaReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<super::indexrpcpb::SchemaResp> {
+        self.client.unary_call(&METHOD_INDEX_SCHEMA, req, opt)
+    }
+
+    pub fn schema(&self, req: &super::indexrpcpb::SchemaReq) -> ::grpcio::Result<super::indexrpcpb::SchemaResp> {
+        self.schema_opt(req, ::grpcio::CallOption::default())
+    }
+
+    pub fn schema_async_opt(&self, req: &super::indexrpcpb::SchemaReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::SchemaResp>> {
+        self.client.unary_call_async(&METHOD_INDEX_SCHEMA, req, opt)
+    }
+
+    pub fn schema_async(&self, req: &super::indexrpcpb::SchemaReq) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexrpcpb::SchemaResp>> {
+        self.schema_async_opt(req, ::grpcio::CallOption::default())
+    }
+    pub fn spawn<F>(&self, f: F) where F: ::futures::Future<Item = (), Error = ()> + Send + 'static {
+        self.client.spawn(f)
+    }
 }
 
-impl Index for IndexClient {
-    fn raft(&self, o: ::grpc::RequestOptions, p: super::eraftpb::Message) -> ::grpc::SingleResponse<super::indexrpcpb::RaftDone> {
-        self.grpc_client.call_unary(o, p, self.method_Raft.clone())
-    }
-
-    fn raft_conf_change(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::ConfChangeReq) -> ::grpc::SingleResponse<super::indexrpcpb::RaftDone> {
-        self.grpc_client.call_unary(o, p, self.method_RaftConfChange.clone())
-    }
-
-    fn probe(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::ProbeReq) -> ::grpc::SingleResponse<super::indexrpcpb::ProbeResp> {
-        self.grpc_client.call_unary(o, p, self.method_Probe.clone())
-    }
-
-    fn peers(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::PeersReq) -> ::grpc::SingleResponse<super::indexrpcpb::PeersResp> {
-        self.grpc_client.call_unary(o, p, self.method_Peers.clone())
-    }
-
-    fn metrics(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::MetricsReq) -> ::grpc::SingleResponse<super::indexrpcpb::MetricsResp> {
-        self.grpc_client.call_unary(o, p, self.method_Metrics.clone())
-    }
-
-    fn get(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::GetReq) -> ::grpc::SingleResponse<super::indexrpcpb::GetResp> {
-        self.grpc_client.call_unary(o, p, self.method_Get.clone())
-    }
-
-    fn put(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::PutReq) -> ::grpc::SingleResponse<super::indexrpcpb::PutResp> {
-        self.grpc_client.call_unary(o, p, self.method_Put.clone())
-    }
-
-    fn delete(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::DeleteReq) -> ::grpc::SingleResponse<super::indexrpcpb::DeleteResp> {
-        self.grpc_client.call_unary(o, p, self.method_Delete.clone())
-    }
-
-    fn bulk_put(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::BulkPutReq) -> ::grpc::SingleResponse<super::indexrpcpb::BulkPutResp> {
-        self.grpc_client.call_unary(o, p, self.method_BulkPut.clone())
-    }
-
-    fn bulk_delete(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::BulkDeleteReq) -> ::grpc::SingleResponse<super::indexrpcpb::BulkDeleteResp> {
-        self.grpc_client.call_unary(o, p, self.method_BulkDelete.clone())
-    }
-
-    fn commit(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::CommitReq) -> ::grpc::SingleResponse<super::indexrpcpb::CommitResp> {
-        self.grpc_client.call_unary(o, p, self.method_Commit.clone())
-    }
-
-    fn rollback(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::RollbackReq) -> ::grpc::SingleResponse<super::indexrpcpb::RollbackResp> {
-        self.grpc_client.call_unary(o, p, self.method_Rollback.clone())
-    }
-
-    fn merge(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::MergeReq) -> ::grpc::SingleResponse<super::indexrpcpb::MergeResp> {
-        self.grpc_client.call_unary(o, p, self.method_Merge.clone())
-    }
-
-    fn search(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::SearchReq) -> ::grpc::SingleResponse<super::indexrpcpb::SearchResp> {
-        self.grpc_client.call_unary(o, p, self.method_Search.clone())
-    }
-
-    fn schema(&self, o: ::grpc::RequestOptions, p: super::indexrpcpb::SchemaReq) -> ::grpc::SingleResponse<super::indexrpcpb::SchemaResp> {
-        self.grpc_client.call_unary(o, p, self.method_Schema.clone())
-    }
+pub trait Index {
+    fn raft(&mut self, ctx: ::grpcio::RpcContext, req: super::eraftpb::Message, sink: ::grpcio::UnarySink<super::indexrpcpb::RaftDone>);
+    fn raft_conf_change(&mut self, ctx: ::grpcio::RpcContext, req: super::indexrpcpb::ConfChangeReq, sink: ::grpcio::UnarySink<super::indexrpcpb::RaftDone>);
+    fn probe(&mut self, ctx: ::grpcio::RpcContext, req: super::indexrpcpb::ProbeReq, sink: ::grpcio::UnarySink<super::indexrpcpb::ProbeResp>);
+    fn peers(&mut self, ctx: ::grpcio::RpcContext, req: super::indexrpcpb::PeersReq, sink: ::grpcio::UnarySink<super::indexrpcpb::PeersResp>);
+    fn metrics(&mut self, ctx: ::grpcio::RpcContext, req: super::indexrpcpb::MetricsReq, sink: ::grpcio::UnarySink<super::indexrpcpb::MetricsResp>);
+    fn get(&mut self, ctx: ::grpcio::RpcContext, req: super::indexrpcpb::GetReq, sink: ::grpcio::UnarySink<super::indexrpcpb::GetResp>);
+    fn put(&mut self, ctx: ::grpcio::RpcContext, req: super::indexrpcpb::PutReq, sink: ::grpcio::UnarySink<super::indexrpcpb::PutResp>);
+    fn delete(&mut self, ctx: ::grpcio::RpcContext, req: super::indexrpcpb::DeleteReq, sink: ::grpcio::UnarySink<super::indexrpcpb::DeleteResp>);
+    fn bulk_put(&mut self, ctx: ::grpcio::RpcContext, req: super::indexrpcpb::BulkPutReq, sink: ::grpcio::UnarySink<super::indexrpcpb::BulkPutResp>);
+    fn bulk_delete(&mut self, ctx: ::grpcio::RpcContext, req: super::indexrpcpb::BulkDeleteReq, sink: ::grpcio::UnarySink<super::indexrpcpb::BulkDeleteResp>);
+    fn commit(&mut self, ctx: ::grpcio::RpcContext, req: super::indexrpcpb::CommitReq, sink: ::grpcio::UnarySink<super::indexrpcpb::CommitResp>);
+    fn rollback(&mut self, ctx: ::grpcio::RpcContext, req: super::indexrpcpb::RollbackReq, sink: ::grpcio::UnarySink<super::indexrpcpb::RollbackResp>);
+    fn merge(&mut self, ctx: ::grpcio::RpcContext, req: super::indexrpcpb::MergeReq, sink: ::grpcio::UnarySink<super::indexrpcpb::MergeResp>);
+    fn search(&mut self, ctx: ::grpcio::RpcContext, req: super::indexrpcpb::SearchReq, sink: ::grpcio::UnarySink<super::indexrpcpb::SearchResp>);
+    fn schema(&mut self, ctx: ::grpcio::RpcContext, req: super::indexrpcpb::SchemaReq, sink: ::grpcio::UnarySink<super::indexrpcpb::SchemaResp>);
 }
 
-// server
-
-pub struct IndexServer;
-
-
-impl IndexServer {
-    pub fn new_service_def<H : Index + 'static + Sync + Send + 'static>(handler: H) -> ::grpc::rt::ServerServiceDefinition {
-        let handler_arc = ::std::sync::Arc::new(handler);
-        ::grpc::rt::ServerServiceDefinition::new("/indexpb.Index",
-            vec![
-                ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/indexpb.Index/Raft".to_string(),
-                        streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                    }),
-                    {
-                        let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.raft(o, p))
-                    },
-                ),
-                ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/indexpb.Index/RaftConfChange".to_string(),
-                        streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                    }),
-                    {
-                        let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.raft_conf_change(o, p))
-                    },
-                ),
-                ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/indexpb.Index/Probe".to_string(),
-                        streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                    }),
-                    {
-                        let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.probe(o, p))
-                    },
-                ),
-                ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/indexpb.Index/Peers".to_string(),
-                        streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                    }),
-                    {
-                        let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.peers(o, p))
-                    },
-                ),
-                ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/indexpb.Index/Metrics".to_string(),
-                        streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                    }),
-                    {
-                        let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.metrics(o, p))
-                    },
-                ),
-                ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/indexpb.Index/Get".to_string(),
-                        streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                    }),
-                    {
-                        let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.get(o, p))
-                    },
-                ),
-                ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/indexpb.Index/Put".to_string(),
-                        streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                    }),
-                    {
-                        let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.put(o, p))
-                    },
-                ),
-                ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/indexpb.Index/Delete".to_string(),
-                        streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                    }),
-                    {
-                        let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.delete(o, p))
-                    },
-                ),
-                ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/indexpb.Index/BulkPut".to_string(),
-                        streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                    }),
-                    {
-                        let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.bulk_put(o, p))
-                    },
-                ),
-                ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/indexpb.Index/BulkDelete".to_string(),
-                        streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                    }),
-                    {
-                        let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.bulk_delete(o, p))
-                    },
-                ),
-                ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/indexpb.Index/Commit".to_string(),
-                        streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                    }),
-                    {
-                        let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.commit(o, p))
-                    },
-                ),
-                ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/indexpb.Index/Rollback".to_string(),
-                        streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                    }),
-                    {
-                        let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.rollback(o, p))
-                    },
-                ),
-                ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/indexpb.Index/Merge".to_string(),
-                        streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                    }),
-                    {
-                        let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.merge(o, p))
-                    },
-                ),
-                ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/indexpb.Index/Search".to_string(),
-                        streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                    }),
-                    {
-                        let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.search(o, p))
-                    },
-                ),
-                ::grpc::rt::ServerMethod::new(
-                    ::std::sync::Arc::new(::grpc::rt::MethodDescriptor {
-                        name: "/indexpb.Index/Schema".to_string(),
-                        streaming: ::grpc::rt::GrpcStreaming::Unary,
-                        req_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                        resp_marshaller: Box::new(::grpc::protobuf::MarshallerProtobuf),
-                    }),
-                    {
-                        let handler_copy = handler_arc.clone();
-                        ::grpc::rt::MethodHandlerUnary::new(move |o, p| handler_copy.schema(o, p))
-                    },
-                ),
-            ],
-        )
-    }
+pub fn create_index<S: Index + Send + Clone + 'static>(s: S) -> ::grpcio::Service {
+    let mut builder = ::grpcio::ServiceBuilder::new();
+    let mut instance = s.clone();
+    builder = builder.add_unary_handler(&METHOD_INDEX_RAFT, move |ctx, req, resp| {
+        instance.raft(ctx, req, resp)
+    });
+    let mut instance = s.clone();
+    builder = builder.add_unary_handler(&METHOD_INDEX_RAFT_CONF_CHANGE, move |ctx, req, resp| {
+        instance.raft_conf_change(ctx, req, resp)
+    });
+    let mut instance = s.clone();
+    builder = builder.add_unary_handler(&METHOD_INDEX_PROBE, move |ctx, req, resp| {
+        instance.probe(ctx, req, resp)
+    });
+    let mut instance = s.clone();
+    builder = builder.add_unary_handler(&METHOD_INDEX_PEERS, move |ctx, req, resp| {
+        instance.peers(ctx, req, resp)
+    });
+    let mut instance = s.clone();
+    builder = builder.add_unary_handler(&METHOD_INDEX_METRICS, move |ctx, req, resp| {
+        instance.metrics(ctx, req, resp)
+    });
+    let mut instance = s.clone();
+    builder = builder.add_unary_handler(&METHOD_INDEX_GET, move |ctx, req, resp| {
+        instance.get(ctx, req, resp)
+    });
+    let mut instance = s.clone();
+    builder = builder.add_unary_handler(&METHOD_INDEX_PUT, move |ctx, req, resp| {
+        instance.put(ctx, req, resp)
+    });
+    let mut instance = s.clone();
+    builder = builder.add_unary_handler(&METHOD_INDEX_DELETE, move |ctx, req, resp| {
+        instance.delete(ctx, req, resp)
+    });
+    let mut instance = s.clone();
+    builder = builder.add_unary_handler(&METHOD_INDEX_BULK_PUT, move |ctx, req, resp| {
+        instance.bulk_put(ctx, req, resp)
+    });
+    let mut instance = s.clone();
+    builder = builder.add_unary_handler(&METHOD_INDEX_BULK_DELETE, move |ctx, req, resp| {
+        instance.bulk_delete(ctx, req, resp)
+    });
+    let mut instance = s.clone();
+    builder = builder.add_unary_handler(&METHOD_INDEX_COMMIT, move |ctx, req, resp| {
+        instance.commit(ctx, req, resp)
+    });
+    let mut instance = s.clone();
+    builder = builder.add_unary_handler(&METHOD_INDEX_ROLLBACK, move |ctx, req, resp| {
+        instance.rollback(ctx, req, resp)
+    });
+    let mut instance = s.clone();
+    builder = builder.add_unary_handler(&METHOD_INDEX_MERGE, move |ctx, req, resp| {
+        instance.merge(ctx, req, resp)
+    });
+    let mut instance = s.clone();
+    builder = builder.add_unary_handler(&METHOD_INDEX_SEARCH, move |ctx, req, resp| {
+        instance.search(ctx, req, resp)
+    });
+    let mut instance = s.clone();
+    builder = builder.add_unary_handler(&METHOD_INDEX_SCHEMA, move |ctx, req, resp| {
+        instance.schema(ctx, req, resp)
+    });
+    builder.build()
 }

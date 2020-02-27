@@ -1,4 +1,3 @@
-extern crate grpc;
 extern crate protobuf;
 extern crate raft;
 

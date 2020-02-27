@@ -9,7 +9,10 @@ format:
 prepare:
 	cargo update -p protobuf --precise 2.8.0
 
-build: prepare
+protoc: prepare
+	./protoc.sh
+
+build: protoc
 	cargo build --release
 
 test:
