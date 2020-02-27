@@ -6,10 +6,7 @@ clean:
 format:
 	cargo fmt
 
-prepare:
-	cargo update -p protobuf --precise 2.8.0
-
-protoc: prepare
+protoc:
 	./protoc.sh
 
 build: protoc
