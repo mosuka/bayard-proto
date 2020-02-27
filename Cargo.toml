@@ -3,6 +3,14 @@ name = "bayard-proto"
 version = "0.1.0"
 authors = ["Minoru Osuka <minoru.osuka@gmail.com>"]
 edition = "2018"
+description = "Protocol Buffers for Bayard"
+documentation = "https://bayard-search.github.io/bayard/"
+homepage = "https://github.com/bayard-search"
+repository = "https://github.com/bayard-search/bayard"
+readme = "README.md"
+keywords = ["bayard", "protocol-buffers", "grpc"]
+categories = ["database"]
+license = "MIT"
 build = "build.rs"
 
 [dependencies]
