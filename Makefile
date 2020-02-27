@@ -7,7 +7,7 @@ format:
 	cargo fmt
 
 prepare:
-	cargo update -p protobuf --precise 2.8.2
+	cargo update -p protobuf --precise 2.8.0
 
 build: prepare
 	cargo build --release

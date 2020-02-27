@@ -15,11 +15,11 @@ build = "build.rs"
 
 [dependencies]
 grpc = "0.6.2"
-protobuf = "2.8.2"
+protobuf = "2.8.0"
 raft = "0.4.3"
 
 [build-dependencies]
-protobuf-codegen-pure = "2.8.2"
-protoc = "2.8.2"
-protoc-rust = "2.8.2"
+protobuf-codegen-pure = "2.8.0"
+protoc = "2.8.0"
+protoc-rust = "2.8.0"
 protoc-rust-grpc = "0.6.2"
