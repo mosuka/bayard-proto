@@ -8,7 +8,7 @@ pop () {
     popd $1 >/dev/null 2>&1
 }
 
-rm -f src/proto
+rm -rf src/proto
 mkdir -p src/proto
 
 push proto
