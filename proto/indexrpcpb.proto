@@ -1,6 +1,8 @@
 syntax = "proto3";
 package indexrpcpb;
 
+option go_package = "indexpb";
+
 import "eraftpb.proto";
 
 enum RespErr {

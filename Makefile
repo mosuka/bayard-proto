@@ -6,10 +6,10 @@ clean:
 format:
 	cargo fmt
 
-protoc:
-	./protoc.sh
+rust:
+	./protoc_rust.sh
 
-build: protoc
+build:
 	cargo build --release
 
 test:
