@@ -1,19 +1,28 @@
 #!/usr/bin/env bash
 
-push () {
-    pushd $1 >/dev/null 2>&1
-}
+mkdir -p ./src/proto
+rm -rf ./src/proto/*
 
-pop () {
-    popd $1 >/dev/null 2>&1
-}
+GRPC_RUST_PLUGIN=$(which grpc_rust_plugin)
 
-rm -rf src/proto
-mkdir -p src/proto
+PROTO_DIRS=$(find . -name '*.proto' -print0 | xargs -0 -n1 dirname | sort | uniq)
+for PROTO_DIR in ${PROTO_DIRS}
+do
+  PROTO_FILES=$(find "${PROTO_DIR}" -name '*.proto' -print0 | xargs -0 -n1 | sort | uniq | grep -v "${PROTO_DIR}/eraftpb.proto")
+  protoc --proto_path="${PROTO_DIR}" --rust_out=./src/proto --grpc_out=./src/proto --plugin=protoc-gen-grpc=${GRPC_RUST_PLUGIN} ${PROTO_FILES}
+done
 
-push proto
+RS_FILES=$(find ./src/proto -name '*.rs' -print0 | xargs -0 -n1 basename | sort | uniq)
+echo "// This file is generated. Do not edit" > ./src/proto/mod.rs
+echo "" >> ./src/proto/mod.rs
 
-protoc --rust_out=../src/proto indexrpcpb.proto
-protoc -I. --rust_out=../src/proto --grpc_out=../src/proto --plugin=protoc-gen-grpc=`which grpc_rust_plugin` indexpb.proto
+echo "use raft::eraftpb;" >> ./src/proto/mod.rs
 
-pop
+echo "" >> ./src/proto/mod.rs
+for RS_FILE in ${RS_FILES}
+do
+  MODULE_NAME=$(echo "${RS_FILE}" | awk -F'.' '{print $1}')
+  echo "pub mod ${MODULE_NAME};" >> ./src/proto/mod.rs
+done
+
+cargo fmt
