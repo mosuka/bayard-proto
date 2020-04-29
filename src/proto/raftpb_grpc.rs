@@ -147,7 +147,7 @@ pub fn create_raft_service<S: RaftService + Send + Clone + 'static>(s: S) -> ::g
     builder = builder.add_unary_handler(&METHOD_RAFT_SERVICE_SEND_MSG, move |ctx, req, resp| {
         instance.send_msg(ctx, req, resp)
     });
-    let mut instance = s.clone();
+    let mut instance = s;
     builder = builder.add_unary_handler(&METHOD_RAFT_SERVICE_SEND_ADDRESS, move |ctx, req, resp| {
         instance.send_address(ctx, req, resp)
     });
