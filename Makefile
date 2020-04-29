@@ -18,8 +18,7 @@ tag:
 	git tag v$(PROTO_VERSION)
 	git push origin v$(PROTO_VERSION)
 
-publish: format
+publish:
 ifeq ($(shell cargo show --json bayard-proto | jq -r '.versions[].num' | grep $(PROTO_VERSION)),)
 	cargo package && cargo publish
-	sleep 10
 endif

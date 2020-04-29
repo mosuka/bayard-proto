@@ -371,7 +371,7 @@ pub fn create_index_service<S: IndexService + Send + Clone + 'static>(s: S) -> :
     builder = builder.add_unary_handler(&METHOD_INDEX_SERVICE_METRICS, move |ctx, req, resp| {
         instance.metrics(ctx, req, resp)
     });
-    let mut instance = s.clone();
+    let mut instance = s;
     builder = builder.add_unary_handler(&METHOD_INDEX_SERVICE_STATUS, move |ctx, req, resp| {
         instance.status(ctx, req, resp)
     });
