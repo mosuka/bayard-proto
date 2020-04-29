@@ -1,6 +1,6 @@
 [package]
 name = "bayard-proto"
-version = "0.7.0"
+version = "0.7.1"
 authors = ["Minoru Osuka <minoru.osuka@gmail.com>"]
 edition = "2018"
 description = "Protocol Buffers for Bayard"
