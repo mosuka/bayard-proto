@@ -24,5 +24,3 @@ do
   MODULE_NAME=$(echo "${RS_FILE}" | awk -F'.' '{print $1}')
   echo "pub mod ${MODULE_NAME};" >> ./src/proto/mod.rs
 done
-
-cargo fmt
