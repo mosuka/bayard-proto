@@ -2,6 +2,9 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.7.4 (2020-05-2)
+- Add script for generating Go codes #6 @mosuka
+
 ## 0.7.3 (2020-04-30)
 - Delete build.rs #5 @mosuka
 
