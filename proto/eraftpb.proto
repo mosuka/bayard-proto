@@ -1,6 +1,8 @@
 syntax = "proto3";
 package eraftpb;
 
+option go_package = "pkg/proto";
+
 enum EntryType {
     EntryNormal = 0;
     EntryConfChange = 1;

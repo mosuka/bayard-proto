@@ -5,6 +5,8 @@ import "commonpb.proto";
 
 package bayard.raft;
 
+option go_package = "pkg/proto";
+
 service RaftService {
     rpc Snapshot(eraftpb.Snapshot) returns(Null) {}
     rpc ChangeConfig(eraftpb.ConfChange) returns(ChangeReply) {}
