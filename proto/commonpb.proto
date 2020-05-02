@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package bayard.common;
 
+option go_package = "pkg/proto";
+
 enum State {
     OK = 0;
     WRONG_LEADER = 1;

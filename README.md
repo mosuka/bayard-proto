@@ -29,6 +29,32 @@ $ curl -o /usr/local/bin/protoc-gen-grpc-web -L https://github.com/grpc/grpc-web
 $ chmod +x /usr/local/bin/protoc-gen-grpc-web
 ```
 
+### Install protoc-gen-go
+
+```shell script
+$ go get -u github.com/golang/protobuf/protoc-gen-go
+```
+
+## Generate code
+
+### Rust
+
+```shell script
+$ ./protoc_rust.sh
+```
+
+### gRPC-Web (JavaScript)
+
+```shell script
+$ ./protoc_grpc-web.sh
+```
+
+### Go
+
+```shell script
+$ ./protoc_go.sh
+```
+
 ## Build
 
 ```

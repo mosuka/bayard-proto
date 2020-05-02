@@ -4,6 +4,8 @@ import "commonpb.proto";
 
 package bayard.index;
 
+option go_package = "pkg/proto";
+
 service IndexService {
     rpc Get(GetReq) returns (GetReply) {}
     rpc Search (SearchReq) returns (SearchReply) {}
