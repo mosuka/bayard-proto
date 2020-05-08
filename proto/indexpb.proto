@@ -17,7 +17,6 @@ service IndexService {
     rpc Rollback (RollbackReq) returns (RollbackReply) {}
     rpc Merge (MergeReq) returns (MergeReply) {}
     rpc Schema (SchemaReq) returns (SchemaReply) {}
-    rpc Metrics (MetricsReq) returns (MetricsReply) {}
     rpc Status (StatusReq) returns (StatusReply) {}
 }
 
@@ -133,17 +132,6 @@ message SchemaReq {
 message SchemaReply {
     bayard.common.State state = 1;
     string schema = 2;
-    bytes address_map = 3;
-    uint64 leader_id = 4;
-}
-
-message MetricsReq {
-    uint64 client_id = 1;
-}
-
-message MetricsReply {
-    bayard.common.State state = 1;
-    string metrics = 2;
     bytes address_map = 3;
     uint64 leader_id = 4;
 }

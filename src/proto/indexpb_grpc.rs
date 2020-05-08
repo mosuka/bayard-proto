@@ -88,13 +88,6 @@ const METHOD_INDEX_SERVICE_SCHEMA: ::grpcio::Method<super::indexpb::SchemaReq, s
     resp_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
 };
 
-const METHOD_INDEX_SERVICE_METRICS: ::grpcio::Method<super::indexpb::MetricsReq, super::indexpb::MetricsReply> = ::grpcio::Method {
-    ty: ::grpcio::MethodType::Unary,
-    name: "/bayard.index.IndexService/Metrics",
-    req_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
-    resp_mar: ::grpcio::Marshaller { ser: ::grpcio::pb_ser, de: ::grpcio::pb_de },
-};
-
 const METHOD_INDEX_SERVICE_STATUS: ::grpcio::Method<super::indexpb::StatusReq, super::indexpb::StatusReply> = ::grpcio::Method {
     ty: ::grpcio::MethodType::Unary,
     name: "/bayard.index.IndexService/Status",
@@ -274,22 +267,6 @@ impl IndexServiceClient {
         self.schema_async_opt(req, ::grpcio::CallOption::default())
     }
 
-    pub fn metrics_opt(&self, req: &super::indexpb::MetricsReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<super::indexpb::MetricsReply> {
-        self.client.unary_call(&METHOD_INDEX_SERVICE_METRICS, req, opt)
-    }
-
-    pub fn metrics(&self, req: &super::indexpb::MetricsReq) -> ::grpcio::Result<super::indexpb::MetricsReply> {
-        self.metrics_opt(req, ::grpcio::CallOption::default())
-    }
-
-    pub fn metrics_async_opt(&self, req: &super::indexpb::MetricsReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexpb::MetricsReply>> {
-        self.client.unary_call_async(&METHOD_INDEX_SERVICE_METRICS, req, opt)
-    }
-
-    pub fn metrics_async(&self, req: &super::indexpb::MetricsReq) -> ::grpcio::Result<::grpcio::ClientUnaryReceiver<super::indexpb::MetricsReply>> {
-        self.metrics_async_opt(req, ::grpcio::CallOption::default())
-    }
-
     pub fn status_opt(&self, req: &super::indexpb::StatusReq, opt: ::grpcio::CallOption) -> ::grpcio::Result<super::indexpb::StatusReply> {
         self.client.unary_call(&METHOD_INDEX_SERVICE_STATUS, req, opt)
     }
@@ -321,7 +298,6 @@ pub trait IndexService {
     fn rollback(&mut self, ctx: ::grpcio::RpcContext, req: super::indexpb::RollbackReq, sink: ::grpcio::UnarySink<super::indexpb::RollbackReply>);
     fn merge(&mut self, ctx: ::grpcio::RpcContext, req: super::indexpb::MergeReq, sink: ::grpcio::UnarySink<super::indexpb::MergeReply>);
     fn schema(&mut self, ctx: ::grpcio::RpcContext, req: super::indexpb::SchemaReq, sink: ::grpcio::UnarySink<super::indexpb::SchemaReply>);
-    fn metrics(&mut self, ctx: ::grpcio::RpcContext, req: super::indexpb::MetricsReq, sink: ::grpcio::UnarySink<super::indexpb::MetricsReply>);
     fn status(&mut self, ctx: ::grpcio::RpcContext, req: super::indexpb::StatusReq, sink: ::grpcio::UnarySink<super::indexpb::StatusReply>);
 }
 
@@ -366,10 +342,6 @@ pub fn create_index_service<S: IndexService + Send + Clone + 'static>(s: S) -> :
     let mut instance = s.clone();
     builder = builder.add_unary_handler(&METHOD_INDEX_SERVICE_SCHEMA, move |ctx, req, resp| {
         instance.schema(ctx, req, resp)
-    });
-    let mut instance = s.clone();
-    builder = builder.add_unary_handler(&METHOD_INDEX_SERVICE_METRICS, move |ctx, req, resp| {
-        instance.metrics(ctx, req, resp)
     });
     let mut instance = s;
     builder = builder.add_unary_handler(&METHOD_INDEX_SERVICE_STATUS, move |ctx, req, resp| {
