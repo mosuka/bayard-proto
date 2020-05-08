@@ -1257,124 +1257,6 @@ func (x *SchemaReply) GetLeaderId() uint64 {
 	return 0
 }
 
-type MetricsReq struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	ClientId uint64 `protobuf:"varint,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
-}
-
-func (x *MetricsReq) Reset() {
-	*x = MetricsReq{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_indexpb_proto_msgTypes[20]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *MetricsReq) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*MetricsReq) ProtoMessage() {}
-
-func (x *MetricsReq) ProtoReflect() protoreflect.Message {
-	mi := &file_indexpb_proto_msgTypes[20]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use MetricsReq.ProtoReflect.Descriptor instead.
-func (*MetricsReq) Descriptor() ([]byte, []int) {
-	return file_indexpb_proto_rawDescGZIP(), []int{20}
-}
-
-func (x *MetricsReq) GetClientId() uint64 {
-	if x != nil {
-		return x.ClientId
-	}
-	return 0
-}
-
-type MetricsReply struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	State      State  `protobuf:"varint,1,opt,name=state,proto3,enum=bayard.common.State" json:"state,omitempty"`
-	Metrics    string `protobuf:"bytes,2,opt,name=metrics,proto3" json:"metrics,omitempty"`
-	AddressMap []byte `protobuf:"bytes,3,opt,name=address_map,json=addressMap,proto3" json:"address_map,omitempty"`
-	LeaderId   uint64 `protobuf:"varint,4,opt,name=leader_id,json=leaderId,proto3" json:"leader_id,omitempty"`
-}
-
-func (x *MetricsReply) Reset() {
-	*x = MetricsReply{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_indexpb_proto_msgTypes[21]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *MetricsReply) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*MetricsReply) ProtoMessage() {}
-
-func (x *MetricsReply) ProtoReflect() protoreflect.Message {
-	mi := &file_indexpb_proto_msgTypes[21]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use MetricsReply.ProtoReflect.Descriptor instead.
-func (*MetricsReply) Descriptor() ([]byte, []int) {
-	return file_indexpb_proto_rawDescGZIP(), []int{21}
-}
-
-func (x *MetricsReply) GetState() State {
-	if x != nil {
-		return x.State
-	}
-	return State_OK
-}
-
-func (x *MetricsReply) GetMetrics() string {
-	if x != nil {
-		return x.Metrics
-	}
-	return ""
-}
-
-func (x *MetricsReply) GetAddressMap() []byte {
-	if x != nil {
-		return x.AddressMap
-	}
-	return nil
-}
-
-func (x *MetricsReply) GetLeaderId() uint64 {
-	if x != nil {
-		return x.LeaderId
-	}
-	return 0
-}
-
 type StatusReq struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1386,7 +1268,7 @@ type StatusReq struct {
 func (x *StatusReq) Reset() {
 	*x = StatusReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_indexpb_proto_msgTypes[22]
+		mi := &file_indexpb_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1399,7 +1281,7 @@ func (x *StatusReq) String() string {
 func (*StatusReq) ProtoMessage() {}
 
 func (x *StatusReq) ProtoReflect() protoreflect.Message {
-	mi := &file_indexpb_proto_msgTypes[22]
+	mi := &file_indexpb_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1412,7 +1294,7 @@ func (x *StatusReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StatusReq.ProtoReflect.Descriptor instead.
 func (*StatusReq) Descriptor() ([]byte, []int) {
-	return file_indexpb_proto_rawDescGZIP(), []int{22}
+	return file_indexpb_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *StatusReq) GetClientId() uint64 {
@@ -1436,7 +1318,7 @@ type StatusReply struct {
 func (x *StatusReply) Reset() {
 	*x = StatusReply{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_indexpb_proto_msgTypes[23]
+		mi := &file_indexpb_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1449,7 +1331,7 @@ func (x *StatusReply) String() string {
 func (*StatusReply) ProtoMessage() {}
 
 func (x *StatusReply) ProtoReflect() protoreflect.Message {
-	mi := &file_indexpb_proto_msgTypes[23]
+	mi := &file_indexpb_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1462,7 +1344,7 @@ func (x *StatusReply) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StatusReply.ProtoReflect.Descriptor instead.
 func (*StatusReply) Descriptor() ([]byte, []int) {
-	return file_indexpb_proto_rawDescGZIP(), []int{23}
+	return file_indexpb_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *StatusReply) GetState() State {
@@ -1625,18 +1507,6 @@ var file_indexpb_proto_rawDesc = []byte{
 	0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x5f, 0x6d, 0x61, 0x70, 0x18, 0x03, 0x20, 0x01, 0x28,
 	0x0c, 0x52, 0x0a, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x4d, 0x61, 0x70, 0x12, 0x1b, 0x0a,
 	0x09, 0x6c, 0x65, 0x61, 0x64, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x04,
-	0x52, 0x08, 0x6c, 0x65, 0x61, 0x64, 0x65, 0x72, 0x49, 0x64, 0x22, 0x29, 0x0a, 0x0a, 0x4d, 0x65,
-	0x74, 0x72, 0x69, 0x63, 0x73, 0x52, 0x65, 0x71, 0x12, 0x1b, 0x0a, 0x09, 0x63, 0x6c, 0x69, 0x65,
-	0x6e, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x08, 0x63, 0x6c, 0x69,
-	0x65, 0x6e, 0x74, 0x49, 0x64, 0x22, 0x92, 0x01, 0x0a, 0x0c, 0x4d, 0x65, 0x74, 0x72, 0x69, 0x63,
-	0x73, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x12, 0x2a, 0x0a, 0x05, 0x73, 0x74, 0x61, 0x74, 0x65, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x14, 0x2e, 0x62, 0x61, 0x79, 0x61, 0x72, 0x64, 0x2e, 0x63,
-	0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x65, 0x52, 0x05, 0x73, 0x74, 0x61,
-	0x74, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x6d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x73, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x07, 0x6d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x73, 0x12, 0x1f, 0x0a, 0x0b,
-	0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x5f, 0x6d, 0x61, 0x70, 0x18, 0x03, 0x20, 0x01, 0x28,
-	0x0c, 0x52, 0x0a, 0x61, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x4d, 0x61, 0x70, 0x12, 0x1b, 0x0a,
-	0x09, 0x6c, 0x65, 0x61, 0x64, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x04,
 	0x52, 0x08, 0x6c, 0x65, 0x61, 0x64, 0x65, 0x72, 0x49, 0x64, 0x22, 0x28, 0x0a, 0x09, 0x53, 0x74,
 	0x61, 0x74, 0x75, 0x73, 0x52, 0x65, 0x71, 0x12, 0x1b, 0x0a, 0x09, 0x63, 0x6c, 0x69, 0x65, 0x6e,
 	0x74, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x08, 0x63, 0x6c, 0x69, 0x65,
@@ -1649,7 +1519,7 @@ var file_indexpb_proto_rawDesc = []byte{
 	0x65, 0x73, 0x73, 0x5f, 0x6d, 0x61, 0x70, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x0a, 0x61,
 	0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x4d, 0x61, 0x70, 0x12, 0x1b, 0x0a, 0x09, 0x6c, 0x65, 0x61,
 	0x64, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x04, 0x52, 0x08, 0x6c, 0x65,
-	0x61, 0x64, 0x65, 0x72, 0x49, 0x64, 0x32, 0x91, 0x06, 0x0a, 0x0c, 0x49, 0x6e, 0x64, 0x65, 0x78,
+	0x61, 0x64, 0x65, 0x72, 0x49, 0x64, 0x32, 0xce, 0x05, 0x0a, 0x0c, 0x49, 0x6e, 0x64, 0x65, 0x78,
 	0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x35, 0x0a, 0x03, 0x47, 0x65, 0x74, 0x12, 0x14,
 	0x2e, 0x62, 0x61, 0x79, 0x61, 0x72, 0x64, 0x2e, 0x69, 0x6e, 0x64, 0x65, 0x78, 0x2e, 0x47, 0x65,
 	0x74, 0x52, 0x65, 0x71, 0x1a, 0x16, 0x2e, 0x62, 0x61, 0x79, 0x61, 0x72, 0x64, 0x2e, 0x69, 0x6e,
@@ -1690,16 +1560,12 @@ var file_indexpb_proto_rawDesc = []byte{
 	0x61, 0x12, 0x17, 0x2e, 0x62, 0x61, 0x79, 0x61, 0x72, 0x64, 0x2e, 0x69, 0x6e, 0x64, 0x65, 0x78,
 	0x2e, 0x53, 0x63, 0x68, 0x65, 0x6d, 0x61, 0x52, 0x65, 0x71, 0x1a, 0x19, 0x2e, 0x62, 0x61, 0x79,
 	0x61, 0x72, 0x64, 0x2e, 0x69, 0x6e, 0x64, 0x65, 0x78, 0x2e, 0x53, 0x63, 0x68, 0x65, 0x6d, 0x61,
-	0x52, 0x65, 0x70, 0x6c, 0x79, 0x22, 0x00, 0x12, 0x41, 0x0a, 0x07, 0x4d, 0x65, 0x74, 0x72, 0x69,
-	0x63, 0x73, 0x12, 0x18, 0x2e, 0x62, 0x61, 0x79, 0x61, 0x72, 0x64, 0x2e, 0x69, 0x6e, 0x64, 0x65,
-	0x78, 0x2e, 0x4d, 0x65, 0x74, 0x72, 0x69, 0x63, 0x73, 0x52, 0x65, 0x71, 0x1a, 0x1a, 0x2e, 0x62,
-	0x61, 0x79, 0x61, 0x72, 0x64, 0x2e, 0x69, 0x6e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x65, 0x74, 0x72,
-	0x69, 0x63, 0x73, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x22, 0x00, 0x12, 0x3e, 0x0a, 0x06, 0x53, 0x74,
-	0x61, 0x74, 0x75, 0x73, 0x12, 0x17, 0x2e, 0x62, 0x61, 0x79, 0x61, 0x72, 0x64, 0x2e, 0x69, 0x6e,
-	0x64, 0x65, 0x78, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x52, 0x65, 0x71, 0x1a, 0x19, 0x2e,
-	0x62, 0x61, 0x79, 0x61, 0x72, 0x64, 0x2e, 0x69, 0x6e, 0x64, 0x65, 0x78, 0x2e, 0x53, 0x74, 0x61,
-	0x74, 0x75, 0x73, 0x52, 0x65, 0x70, 0x6c, 0x79, 0x22, 0x00, 0x42, 0x0b, 0x5a, 0x09, 0x70, 0x6b,
-	0x67, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x52, 0x65, 0x70, 0x6c, 0x79, 0x22, 0x00, 0x12, 0x3e, 0x0a, 0x06, 0x53, 0x74, 0x61, 0x74, 0x75,
+	0x73, 0x12, 0x17, 0x2e, 0x62, 0x61, 0x79, 0x61, 0x72, 0x64, 0x2e, 0x69, 0x6e, 0x64, 0x65, 0x78,
+	0x2e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x52, 0x65, 0x71, 0x1a, 0x19, 0x2e, 0x62, 0x61, 0x79,
+	0x61, 0x72, 0x64, 0x2e, 0x69, 0x6e, 0x64, 0x65, 0x78, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73,
+	0x52, 0x65, 0x70, 0x6c, 0x79, 0x22, 0x00, 0x42, 0x0b, 0x5a, 0x09, 0x70, 0x6b, 0x67, 0x2f, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1714,7 +1580,7 @@ func file_indexpb_proto_rawDescGZIP() []byte {
 	return file_indexpb_proto_rawDescData
 }
 
-var file_indexpb_proto_msgTypes = make([]protoimpl.MessageInfo, 24)
+var file_indexpb_proto_msgTypes = make([]protoimpl.MessageInfo, 22)
 var file_indexpb_proto_goTypes = []interface{}{
 	(*SearchReq)(nil),       // 0: bayard.index.SearchReq
 	(*SearchReply)(nil),     // 1: bayard.index.SearchReply
@@ -1736,54 +1602,49 @@ var file_indexpb_proto_goTypes = []interface{}{
 	(*MergeReply)(nil),      // 17: bayard.index.MergeReply
 	(*SchemaReq)(nil),       // 18: bayard.index.SchemaReq
 	(*SchemaReply)(nil),     // 19: bayard.index.SchemaReply
-	(*MetricsReq)(nil),      // 20: bayard.index.MetricsReq
-	(*MetricsReply)(nil),    // 21: bayard.index.MetricsReply
-	(*StatusReq)(nil),       // 22: bayard.index.StatusReq
-	(*StatusReply)(nil),     // 23: bayard.index.StatusReply
-	(State)(0),              // 24: bayard.common.State
+	(*StatusReq)(nil),       // 20: bayard.index.StatusReq
+	(*StatusReply)(nil),     // 21: bayard.index.StatusReply
+	(State)(0),              // 22: bayard.common.State
 }
 var file_indexpb_proto_depIdxs = []int32{
-	24, // 0: bayard.index.SearchReply.state:type_name -> bayard.common.State
-	24, // 1: bayard.index.GetReply.state:type_name -> bayard.common.State
-	24, // 2: bayard.index.SetReply.state:type_name -> bayard.common.State
-	24, // 3: bayard.index.DeleteReply.state:type_name -> bayard.common.State
-	24, // 4: bayard.index.BulkSetReply.state:type_name -> bayard.common.State
-	24, // 5: bayard.index.BulkDeleteReply.state:type_name -> bayard.common.State
-	24, // 6: bayard.index.CommitReply.state:type_name -> bayard.common.State
-	24, // 7: bayard.index.RollbackReply.state:type_name -> bayard.common.State
-	24, // 8: bayard.index.MergeReply.state:type_name -> bayard.common.State
-	24, // 9: bayard.index.SchemaReply.state:type_name -> bayard.common.State
-	24, // 10: bayard.index.MetricsReply.state:type_name -> bayard.common.State
-	24, // 11: bayard.index.StatusReply.state:type_name -> bayard.common.State
-	2,  // 12: bayard.index.IndexService.Get:input_type -> bayard.index.GetReq
-	0,  // 13: bayard.index.IndexService.Search:input_type -> bayard.index.SearchReq
-	4,  // 14: bayard.index.IndexService.Set:input_type -> bayard.index.SetReq
-	6,  // 15: bayard.index.IndexService.Delete:input_type -> bayard.index.DeleteReq
-	8,  // 16: bayard.index.IndexService.BulkSet:input_type -> bayard.index.BulkSetReq
-	10, // 17: bayard.index.IndexService.BulkDelete:input_type -> bayard.index.BulkDeleteReq
-	12, // 18: bayard.index.IndexService.Commit:input_type -> bayard.index.CommitReq
-	14, // 19: bayard.index.IndexService.Rollback:input_type -> bayard.index.RollbackReq
-	16, // 20: bayard.index.IndexService.Merge:input_type -> bayard.index.MergeReq
-	18, // 21: bayard.index.IndexService.Schema:input_type -> bayard.index.SchemaReq
-	20, // 22: bayard.index.IndexService.Metrics:input_type -> bayard.index.MetricsReq
-	22, // 23: bayard.index.IndexService.Status:input_type -> bayard.index.StatusReq
-	3,  // 24: bayard.index.IndexService.Get:output_type -> bayard.index.GetReply
-	1,  // 25: bayard.index.IndexService.Search:output_type -> bayard.index.SearchReply
-	5,  // 26: bayard.index.IndexService.Set:output_type -> bayard.index.SetReply
-	7,  // 27: bayard.index.IndexService.Delete:output_type -> bayard.index.DeleteReply
-	9,  // 28: bayard.index.IndexService.BulkSet:output_type -> bayard.index.BulkSetReply
-	11, // 29: bayard.index.IndexService.BulkDelete:output_type -> bayard.index.BulkDeleteReply
-	13, // 30: bayard.index.IndexService.Commit:output_type -> bayard.index.CommitReply
-	15, // 31: bayard.index.IndexService.Rollback:output_type -> bayard.index.RollbackReply
-	17, // 32: bayard.index.IndexService.Merge:output_type -> bayard.index.MergeReply
-	19, // 33: bayard.index.IndexService.Schema:output_type -> bayard.index.SchemaReply
-	21, // 34: bayard.index.IndexService.Metrics:output_type -> bayard.index.MetricsReply
-	23, // 35: bayard.index.IndexService.Status:output_type -> bayard.index.StatusReply
-	24, // [24:36] is the sub-list for method output_type
-	12, // [12:24] is the sub-list for method input_type
-	12, // [12:12] is the sub-list for extension type_name
-	12, // [12:12] is the sub-list for extension extendee
-	0,  // [0:12] is the sub-list for field type_name
+	22, // 0: bayard.index.SearchReply.state:type_name -> bayard.common.State
+	22, // 1: bayard.index.GetReply.state:type_name -> bayard.common.State
+	22, // 2: bayard.index.SetReply.state:type_name -> bayard.common.State
+	22, // 3: bayard.index.DeleteReply.state:type_name -> bayard.common.State
+	22, // 4: bayard.index.BulkSetReply.state:type_name -> bayard.common.State
+	22, // 5: bayard.index.BulkDeleteReply.state:type_name -> bayard.common.State
+	22, // 6: bayard.index.CommitReply.state:type_name -> bayard.common.State
+	22, // 7: bayard.index.RollbackReply.state:type_name -> bayard.common.State
+	22, // 8: bayard.index.MergeReply.state:type_name -> bayard.common.State
+	22, // 9: bayard.index.SchemaReply.state:type_name -> bayard.common.State
+	22, // 10: bayard.index.StatusReply.state:type_name -> bayard.common.State
+	2,  // 11: bayard.index.IndexService.Get:input_type -> bayard.index.GetReq
+	0,  // 12: bayard.index.IndexService.Search:input_type -> bayard.index.SearchReq
+	4,  // 13: bayard.index.IndexService.Set:input_type -> bayard.index.SetReq
+	6,  // 14: bayard.index.IndexService.Delete:input_type -> bayard.index.DeleteReq
+	8,  // 15: bayard.index.IndexService.BulkSet:input_type -> bayard.index.BulkSetReq
+	10, // 16: bayard.index.IndexService.BulkDelete:input_type -> bayard.index.BulkDeleteReq
+	12, // 17: bayard.index.IndexService.Commit:input_type -> bayard.index.CommitReq
+	14, // 18: bayard.index.IndexService.Rollback:input_type -> bayard.index.RollbackReq
+	16, // 19: bayard.index.IndexService.Merge:input_type -> bayard.index.MergeReq
+	18, // 20: bayard.index.IndexService.Schema:input_type -> bayard.index.SchemaReq
+	20, // 21: bayard.index.IndexService.Status:input_type -> bayard.index.StatusReq
+	3,  // 22: bayard.index.IndexService.Get:output_type -> bayard.index.GetReply
+	1,  // 23: bayard.index.IndexService.Search:output_type -> bayard.index.SearchReply
+	5,  // 24: bayard.index.IndexService.Set:output_type -> bayard.index.SetReply
+	7,  // 25: bayard.index.IndexService.Delete:output_type -> bayard.index.DeleteReply
+	9,  // 26: bayard.index.IndexService.BulkSet:output_type -> bayard.index.BulkSetReply
+	11, // 27: bayard.index.IndexService.BulkDelete:output_type -> bayard.index.BulkDeleteReply
+	13, // 28: bayard.index.IndexService.Commit:output_type -> bayard.index.CommitReply
+	15, // 29: bayard.index.IndexService.Rollback:output_type -> bayard.index.RollbackReply
+	17, // 30: bayard.index.IndexService.Merge:output_type -> bayard.index.MergeReply
+	19, // 31: bayard.index.IndexService.Schema:output_type -> bayard.index.SchemaReply
+	21, // 32: bayard.index.IndexService.Status:output_type -> bayard.index.StatusReply
+	22, // [22:33] is the sub-list for method output_type
+	11, // [11:22] is the sub-list for method input_type
+	11, // [11:11] is the sub-list for extension type_name
+	11, // [11:11] is the sub-list for extension extendee
+	0,  // [0:11] is the sub-list for field type_name
 }
 
 func init() { file_indexpb_proto_init() }
@@ -2034,30 +1895,6 @@ func file_indexpb_proto_init() {
 			}
 		}
 		file_indexpb_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MetricsReq); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_indexpb_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MetricsReply); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_indexpb_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*StatusReq); i {
 			case 0:
 				return &v.state
@@ -2069,7 +1906,7 @@ func file_indexpb_proto_init() {
 				return nil
 			}
 		}
-		file_indexpb_proto_msgTypes[23].Exporter = func(v interface{}, i int) interface{} {
+		file_indexpb_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*StatusReply); i {
 			case 0:
 				return &v.state
@@ -2088,7 +1925,7 @@ func file_indexpb_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_indexpb_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   24,
+			NumMessages:   22,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -2124,7 +1961,6 @@ type IndexServiceClient interface {
 	Rollback(ctx context.Context, in *RollbackReq, opts ...grpc.CallOption) (*RollbackReply, error)
 	Merge(ctx context.Context, in *MergeReq, opts ...grpc.CallOption) (*MergeReply, error)
 	Schema(ctx context.Context, in *SchemaReq, opts ...grpc.CallOption) (*SchemaReply, error)
-	Metrics(ctx context.Context, in *MetricsReq, opts ...grpc.CallOption) (*MetricsReply, error)
 	Status(ctx context.Context, in *StatusReq, opts ...grpc.CallOption) (*StatusReply, error)
 }
 
@@ -2226,15 +2062,6 @@ func (c *indexServiceClient) Schema(ctx context.Context, in *SchemaReq, opts ...
 	return out, nil
 }
 
-func (c *indexServiceClient) Metrics(ctx context.Context, in *MetricsReq, opts ...grpc.CallOption) (*MetricsReply, error) {
-	out := new(MetricsReply)
-	err := c.cc.Invoke(ctx, "/bayard.index.IndexService/Metrics", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *indexServiceClient) Status(ctx context.Context, in *StatusReq, opts ...grpc.CallOption) (*StatusReply, error) {
 	out := new(StatusReply)
 	err := c.cc.Invoke(ctx, "/bayard.index.IndexService/Status", in, out, opts...)
@@ -2256,7 +2083,6 @@ type IndexServiceServer interface {
 	Rollback(context.Context, *RollbackReq) (*RollbackReply, error)
 	Merge(context.Context, *MergeReq) (*MergeReply, error)
 	Schema(context.Context, *SchemaReq) (*SchemaReply, error)
-	Metrics(context.Context, *MetricsReq) (*MetricsReply, error)
 	Status(context.Context, *StatusReq) (*StatusReply, error)
 }
 
@@ -2293,9 +2119,6 @@ func (*UnimplementedIndexServiceServer) Merge(context.Context, *MergeReq) (*Merg
 }
 func (*UnimplementedIndexServiceServer) Schema(context.Context, *SchemaReq) (*SchemaReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Schema not implemented")
-}
-func (*UnimplementedIndexServiceServer) Metrics(context.Context, *MetricsReq) (*MetricsReply, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method Metrics not implemented")
 }
 func (*UnimplementedIndexServiceServer) Status(context.Context, *StatusReq) (*StatusReply, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Status not implemented")
@@ -2485,24 +2308,6 @@ func _IndexService_Schema_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
-func _IndexService_Metrics_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(MetricsReq)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(IndexServiceServer).Metrics(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/bayard.index.IndexService/Metrics",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(IndexServiceServer).Metrics(ctx, req.(*MetricsReq))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _IndexService_Status_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(StatusReq)
 	if err := dec(in); err != nil {
@@ -2564,10 +2369,6 @@ var _IndexService_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Schema",
 			Handler:    _IndexService_Schema_Handler,
-		},
-		{
-			MethodName: "Metrics",
-			Handler:    _IndexService_Metrics_Handler,
 		},
 		{
 			MethodName: "Status",
