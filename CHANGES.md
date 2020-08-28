@@ -2,6 +2,9 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Unreleased
+- Upgrade protobuf #8 @mosuka
+
 ## 0.8.0 (2020-05-08)
 - Delete metrics #7 @mosuka
 
