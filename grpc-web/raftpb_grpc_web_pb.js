@@ -7,6 +7,10 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 
+/* eslint-disable */
+// @ts-nocheck
+
+
 
 const grpc = {};
 grpc.web = require('grpc-web');
@@ -139,7 +143,7 @@ proto.bayard.raft.RaftServiceClient.prototype.snapshot =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.bayard.raft.Null>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.bayard.raft.RaftServicePromiseClient.prototype.snapshot =
     function(request, metadata) {
@@ -219,7 +223,7 @@ proto.bayard.raft.RaftServiceClient.prototype.changeConfig =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.bayard.raft.ChangeReply>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.bayard.raft.RaftServicePromiseClient.prototype.changeConfig =
     function(request, metadata) {
@@ -299,7 +303,7 @@ proto.bayard.raft.RaftServiceClient.prototype.sendMsg =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.bayard.raft.Null>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.bayard.raft.RaftServicePromiseClient.prototype.sendMsg =
     function(request, metadata) {
@@ -379,7 +383,7 @@ proto.bayard.raft.RaftServiceClient.prototype.sendAddress =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.bayard.raft.Null>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.bayard.raft.RaftServicePromiseClient.prototype.sendAddress =
     function(request, metadata) {
