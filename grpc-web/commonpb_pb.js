@@ -1,4 +1,3 @@
-// source: commonpb.proto
 /**
  * @fileoverview
  * @enhanceable

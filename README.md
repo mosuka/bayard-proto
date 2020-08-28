@@ -19,16 +19,16 @@ The following products are required to build:
 
 ```shell script
 $ cargo install protobuf-codegen
-$ cargo install grpcio-compiler
+$ cargo install grpcio-compiler --version=0.4.3
 ```
 
 ### Install protoc-gen-grpc-web
 
 ```shell script
-$ curl -o /usr/local/bin/protoc-gen-grpc-web -L https://github.com/grpc/grpc-web/releases/download/1.0.7/protoc-gen-grpc-web-1.0.7-darwin-x86_64
+$ curl -o /usr/local/bin/protoc-gen-grpc-web -L https://github.com/grpc/grpc-web/releases/download/1.2.1/protoc-gen-grpc-web-1.2.1-darwin-x86_64
 $ chmod +x /usr/local/bin/protoc-gen-grpc-web
 ```
-
+ls 
 ### Install protoc-gen-go
 
 ```shell script

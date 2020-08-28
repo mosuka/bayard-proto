@@ -7,6 +7,10 @@
 // GENERATED CODE -- DO NOT EDIT!
 
 
+/* eslint-disable */
+// @ts-nocheck
+
+
 
 const grpc = {};
 grpc.web = require('grpc-web');
@@ -137,7 +141,7 @@ proto.bayard.index.IndexServiceClient.prototype.get =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.bayard.index.GetReply>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.bayard.index.IndexServicePromiseClient.prototype.get =
     function(request, metadata) {
@@ -217,7 +221,7 @@ proto.bayard.index.IndexServiceClient.prototype.search =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.bayard.index.SearchReply>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.bayard.index.IndexServicePromiseClient.prototype.search =
     function(request, metadata) {
@@ -297,7 +301,7 @@ proto.bayard.index.IndexServiceClient.prototype.set =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.bayard.index.SetReply>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.bayard.index.IndexServicePromiseClient.prototype.set =
     function(request, metadata) {
@@ -377,7 +381,7 @@ proto.bayard.index.IndexServiceClient.prototype.delete =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.bayard.index.DeleteReply>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.bayard.index.IndexServicePromiseClient.prototype.delete =
     function(request, metadata) {
@@ -457,7 +461,7 @@ proto.bayard.index.IndexServiceClient.prototype.bulkSet =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.bayard.index.BulkSetReply>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.bayard.index.IndexServicePromiseClient.prototype.bulkSet =
     function(request, metadata) {
@@ -537,7 +541,7 @@ proto.bayard.index.IndexServiceClient.prototype.bulkDelete =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.bayard.index.BulkDeleteReply>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.bayard.index.IndexServicePromiseClient.prototype.bulkDelete =
     function(request, metadata) {
@@ -617,7 +621,7 @@ proto.bayard.index.IndexServiceClient.prototype.commit =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.bayard.index.CommitReply>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.bayard.index.IndexServicePromiseClient.prototype.commit =
     function(request, metadata) {
@@ -697,7 +701,7 @@ proto.bayard.index.IndexServiceClient.prototype.rollback =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.bayard.index.RollbackReply>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.bayard.index.IndexServicePromiseClient.prototype.rollback =
     function(request, metadata) {
@@ -777,7 +781,7 @@ proto.bayard.index.IndexServiceClient.prototype.merge =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.bayard.index.MergeReply>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.bayard.index.IndexServicePromiseClient.prototype.merge =
     function(request, metadata) {
@@ -857,7 +861,7 @@ proto.bayard.index.IndexServiceClient.prototype.schema =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.bayard.index.SchemaReply>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.bayard.index.IndexServicePromiseClient.prototype.schema =
     function(request, metadata) {
@@ -937,7 +941,7 @@ proto.bayard.index.IndexServiceClient.prototype.status =
  * @param {?Object<string, string>} metadata User defined
  *     call metadata
  * @return {!Promise<!proto.bayard.index.StatusReply>}
- *     A native promise that resolves to the response
+ *     Promise that resolves to the response
  */
 proto.bayard.index.IndexServicePromiseClient.prototype.status =
     function(request, metadata) {

@@ -19,6 +19,6 @@ tag:
 	git push origin v$(PROTO_VERSION)
 
 publish:
-ifeq ($(shell cargo show --json bayard-proto | jq -r '.versions[].num' | grep $(PROTO_VERSION)),)
+ifeq ($(shell curl -s -XGET https://crates.io/api/v1/crates/bayard-proto | jq -r '.versions[].num' | grep $(PROTO_VERSION)),)
 	cargo package && cargo publish
 endif

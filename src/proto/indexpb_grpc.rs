@@ -1,11 +1,12 @@
 // This file is generated. Do not edit
 // @generated
 
-// https://github.com/Manishearth/rust-clippy/issues/702
+// https://github.com/rust-lang/rust-clippy/issues/702
 #![allow(unknown_lints)]
 #![allow(clippy::all)]
 
-#![cfg_attr(rustfmt, rustfmt_skip)]
+#![allow(unused_attributes)]
+#![rustfmt::skip]
 
 #![allow(box_pointers)]
 #![allow(dead_code)]
@@ -14,7 +15,6 @@
 #![allow(non_snake_case)]
 #![allow(non_upper_case_globals)]
 #![allow(trivial_casts)]
-#![allow(unsafe_code)]
 #![allow(unused_imports)]
 #![allow(unused_results)]
 
@@ -343,7 +343,7 @@ pub fn create_index_service<S: IndexService + Send + Clone + 'static>(s: S) -> :
     builder = builder.add_unary_handler(&METHOD_INDEX_SERVICE_SCHEMA, move |ctx, req, resp| {
         instance.schema(ctx, req, resp)
     });
-    let mut instance = s;
+    let mut instance = s.clone();
     builder = builder.add_unary_handler(&METHOD_INDEX_SERVICE_STATUS, move |ctx, req, resp| {
         instance.status(ctx, req, resp)
     });
