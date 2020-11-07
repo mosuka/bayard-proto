@@ -13,7 +13,7 @@ categories = ["database"]
 license = "MIT"
 
 [dependencies]
-futures = "0.1.29"
-grpcio = { version = "0.4.7", features = [ "secure" ] }
-protobuf = "2.17.0"
-raft = "0.4.3"
+futures = "0.1"
+grpcio = { version = "0.4", features = [ "secure" ] }
+protobuf = "2.17"
+raft = "0.4"
